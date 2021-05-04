@@ -1,0 +1,83 @@
+/* 設定 */
+html {
+  font-size: 62.5%;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+/* header */
+header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+}
+
+.header-container {
+  width: 80%;
+  height: 4rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav-container {
+  width: max-content;
+}
+
+.header__nav-container__lists {
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.header__nav-container__lists-item:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+/* home */
+#home {
+  height: 51rem;
+  width: 100%;
+  background: url("../images/homebg.png") center bottom / cover no-repeat;
+}
+
+.home-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.home-discription {
+  padding-top: 10rem;
+  width: max-content;
+}
+
+.home-discription__sub-title {
+  font-weight: bold;
+}
+
+/* aboutme */
+.aboutme-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.aboutme__title {
+  padding-top: 2rem;
+  border-bottom: 0.1rem solid #333;
+}
+
+.aboutme__block {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutme-question {
+  border: 0.1rem solid #333;
+}
