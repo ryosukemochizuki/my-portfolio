@@ -2,7 +2,10 @@
 html {
   font-size: 62.5%;
   letter-spacing: 0.5px;
-  color: #333;
+  color: #222;
+  font-weight: bold;
+  font-family: MercariSans-Bold, Avenir-Black, Arial, TazuganeGothicStdN-Bold,
+    "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
 }
 
 li {
@@ -11,9 +14,11 @@ li {
 
 /* header */
 header {
+  color: white;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
+  z-index: 10;
 }
 
 .header-container {
@@ -42,9 +47,15 @@ header {
 
 /* home */
 #home {
+  color: white;
   height: 51rem;
   width: 100%;
   background: url("../images/homebg.png") center bottom / cover no-repeat;
+}
+
+.home-opacity {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .home-container {
@@ -52,12 +63,12 @@ header {
   margin: 0 auto;
 }
 
-.home-discription {
+.home__discription {
   padding-top: 10rem;
   width: max-content;
 }
 
-.home-discription__sub-title {
+.home__discription__sub-title {
   font-weight: bold;
 }
 
@@ -73,11 +84,59 @@ header {
 }
 
 .aboutme__block {
-  margin-top: 4rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.aboutme__q-and-a {
+  width: 30%;
+  margin-top: 4rem;
+}
+
 .aboutme-question {
-  border: 0.1rem solid #333;
+  border-bottom: 0.1rem solid #333;
+  font-size: 1.5em;
+  margin-bottom: 3rem;
+}
+
+.aboutme-answer {
+  font-size: 1.2em;
+}
+
+.aboutme__q-and-a__hobby {
+  position: relative;
+}
+
+.aboutme__answer__countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.aboutme__answer__country-img {
+  width: 30%;
+  z-index: 1;
+}
+
+#aboutme__answer__trip {
+  margin-bottom: 1rem;
+  border-bottom: #333 solid 0.1rem;
+}
+
+#aboutme__answer__trip::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: #333 solid 0.2rem;
+  border-right: #333 solid 0.2rem;
+  position: absolute;
+  top: 5.8rem;
+  right: 1rem;
+  transform: rotate(-45deg);
+}
+
+.aboutme__answer__country {
+  width: 30%;
+  margin-bottom: 1rem;
 }
