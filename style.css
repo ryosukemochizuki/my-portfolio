@@ -17,14 +17,6 @@ a {
   color: white;
 }
 
-.none {
-  display: none;
-}
-
-.transition {
-  transition: all 1s;
-}
-
 /* header */
 header {
   color: white;
@@ -68,6 +60,7 @@ header {
 
 .home-opacity {
   height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -97,7 +90,7 @@ header {
   border-bottom: 0.1rem solid #333;
 }
 
-.aboutme__block {
+.aboutme__details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -108,28 +101,23 @@ header {
   margin-top: 4rem;
 }
 
-.aboutme-question {
+.aboutme__question {
   border-bottom: 0.1rem solid #333;
   font-size: 1.5em;
   margin-bottom: 3rem;
 }
 
-.aboutme-answer {
+.aboutme__answer {
   font-size: 1.2em;
   opacity: 0;
-  height: 0;
-  transform: rotate(315deg);
+  transform: translateX(5rem);
   transition: all 1.5s;
 }
 
-.aboutme-answer.seen {
+.aboutme__answer.seen {
   opacity: 1;
   height: max-content;
-  transform: rotate(360deg);
-}
-
-.aboutme__q-and-a__hobby {
-  position: relative;
+  transform: translateX(0);
 }
 
 #aboutme__answer__trip {
@@ -156,7 +144,6 @@ header {
 
 #aboutme__answer__countries {
   opacity: 0;
-  padding: 0;
   height: 0;
   display: flex;
   flex-wrap: wrap;
@@ -167,7 +154,6 @@ header {
 #aboutme__answer__countries.open {
   opacity: 1;
   height: max-content;
-  padding: 0;
   transition: 0.5s;
   padding: 2rem 0 3rem;
 }
@@ -185,7 +171,7 @@ header {
   opacity: 1;
   height: max-content;
   margin-bottom: 2rem;
-  transition: 1s;
+  transition: 2s;
 }
 
 .aboutme__answer__country-img {
@@ -215,7 +201,7 @@ header {
   position: relative;
 }
 
-.gallery__slide-arrow-left {
+#gallery__slide__arrow-left {
   position: absolute;
   left: 10%;
   top: 50%;
@@ -223,18 +209,17 @@ header {
   font-size: 2em;
 }
 
-.gallery__slide-arrow-right {
+#gallery__slide {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#gallery__slide__arrow-right {
   position: absolute;
   right: 10%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2em;
-}
-
-.gallery__slide {
-  width: 40%;
-  /* display: block; */
-  margin: 0 auto;
 }
 
 /* footer */
