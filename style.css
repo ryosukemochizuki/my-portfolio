@@ -17,6 +17,14 @@ a {
   color: white;
 }
 
+.none {
+  display: none;
+}
+
+.transition {
+  transition: all 1s;
+}
+
 /* header */
 header {
   color: white;
@@ -81,7 +89,7 @@ header {
 .aboutme-container {
   width: 80%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 0 0;
 }
 
 .aboutme__title {
@@ -108,25 +116,24 @@ header {
 
 .aboutme-answer {
   font-size: 1.2em;
+  opacity: 0;
+  height: 0;
+  transform: rotate(315deg);
+  transition: all 1.5s;
+}
+
+.aboutme-answer.seen {
+  opacity: 1;
+  height: max-content;
+  transform: rotate(360deg);
 }
 
 .aboutme__q-and-a__hobby {
   position: relative;
 }
 
-.aboutme__answer__countries {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.aboutme__answer__country-img {
-  width: 30%;
-  z-index: 1;
-}
-
 #aboutme__answer__trip {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-bottom: #333 solid 0.1rem;
 }
 
@@ -137,14 +144,53 @@ header {
   border-top: #333 solid 0.2rem;
   border-right: #333 solid 0.2rem;
   position: absolute;
-  top: 5.8rem;
+  top: 0.8rem;
   right: 1rem;
   transform: rotate(-45deg);
+  transition: 1s;
+}
+
+#aboutme__answer__trip.open::after {
+  transform: rotate(135deg);
+}
+
+#aboutme__answer__countries {
+  opacity: 0;
+  padding: 0;
+  height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: 1s;
+}
+
+#aboutme__answer__countries.open {
+  opacity: 1;
+  height: max-content;
+  padding: 0;
+  transition: 0.5s;
+  padding: 2rem 0 3rem;
 }
 
 .aboutme__answer__country {
   width: 30%;
-  margin-bottom: 1rem;
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+  transition: 0.5s;
+}
+
+.aboutme__answer__country.open {
+  width: 30%;
+  opacity: 1;
+  height: max-content;
+  margin-bottom: 2rem;
+  transition: 1s;
+}
+
+.aboutme__answer__country-img {
+  width: 30%;
+  z-index: 1;
 }
 
 /* gallery */
