@@ -1,6 +1,5 @@
 /* 設定 */
 html {
-  font-size: 62.5%;
   letter-spacing: 0.5px;
   color: #222;
   font-weight: bold;
@@ -50,6 +49,12 @@ header {
   margin-right: 2rem;
 }
 
+@media screen and (max-width: 500px) {
+  .header-container {
+    width: 90%;
+  }
+}
+
 /* home */
 #home {
   color: white;
@@ -76,6 +81,12 @@ header {
 
 .home__discription__sub-title {
   font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .home-container {
+    width: 90%;
+  }
 }
 
 /* aboutme */
@@ -105,6 +116,7 @@ header {
   border-bottom: 0.1rem solid #333;
   font-size: 1.5em;
   margin-bottom: 3rem;
+  width: 90%;
 }
 
 .aboutme__answer {
@@ -112,17 +124,20 @@ header {
   opacity: 0;
   transform: translateX(5rem);
   transition: all 1.5s;
+  width: 90%;
 }
 
 .aboutme__answer.seen {
   opacity: 1;
   height: max-content;
+  width: 90%;
   transform: translateX(0);
 }
 
 #aboutme__answer__trip {
   margin-bottom: 2rem;
   border-bottom: #333 solid 0.1rem;
+  width: 90%;
 }
 
 #aboutme__answer__trip::after {
@@ -179,6 +194,27 @@ header {
   z-index: 1;
 }
 
+@media screen and (max-width: 950px) {
+  .aboutme__q-and-a {
+    width: 45%;
+  }
+  .aboutme__answer__country {
+    width: 45%;
+  }
+  .aboutme__answer__country.open {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .aboutme-container {
+    width: 90%;
+  }
+  .aboutme__q-and-a {
+    width: 100%;
+  }
+}
+
 /* gallery */
 #gallery {
   background-color: rgba(0, 0, 0, 0.1);
@@ -203,7 +239,7 @@ header {
 
 #gallery__slide__arrow-left {
   position: absolute;
-  left: 10%;
+  left: 20%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2em;
@@ -216,10 +252,37 @@ header {
 
 #gallery__slide__arrow-right {
   position: absolute;
-  right: 10%;
+  right: 20%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2em;
+}
+
+@media screen and (max-width: 950px) {
+  #gallery__slide__arrow-left {
+    left: 10%;
+  }
+  #gallery__slide {
+    width: 60%;
+  }
+  #gallery__slide__arrow-right {
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gallery-container {
+    width: 90%;
+  }
+  #gallery__slide__arrow-left {
+    left: 0;
+  }
+  #gallery__slide {
+    width: 80%;
+  }
+  #gallery__slide__arrow-right {
+    right: 0;
+  }
 }
 
 /* footer */
