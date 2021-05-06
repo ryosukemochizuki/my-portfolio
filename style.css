@@ -260,6 +260,11 @@ header {
   font-size: 2em;
 }
 
+#gallery__slide__discription {
+  width: 100%;
+  text-align: center;
+}
+
 @media screen and (max-width: 950px) {
   #gallery__slide__arrow-left {
     left: 10%;
