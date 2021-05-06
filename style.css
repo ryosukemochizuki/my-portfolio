@@ -1,5 +1,7 @@
 /* 設定 */
 html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
   letter-spacing: 0.5px;
   color: #222;
   font-weight: bold;
@@ -232,7 +234,7 @@ header {
 }
 
 .gallery__slides {
-  margin: 4rem 0;
+  margin: 5rem 0;
   display: inline-flex;
   position: relative;
 }

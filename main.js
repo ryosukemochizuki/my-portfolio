@@ -1,10 +1,6 @@
-const getElemId = function (arg) {
-  return document.getElementById(arg);
-};
-
 // aboutmeのフェードイン
-const aboutMeQuestions = document.querySelectorAll(".aboutme__question");
 
+const aboutMeQuestions = document.querySelectorAll(".aboutme__question");
 // questionに接しているanswerを出現させる関数
 const drawAnswer = function (order) {
   aboutMeQuestions[order].onmouseover = function () {
@@ -12,19 +8,20 @@ const drawAnswer = function (order) {
     aboutMeAnswer.classList.add("seen"); // 見えるようにする
   };
 };
-
 // questionがある個数分だけイベントを作る
 for (let i = 0; i < aboutMeQuestions.length; i++) {
   drawAnswer(i);
 }
 
 // 国の開け閉め
-const aboutMeAnswerTrip = getElemId("aboutme__answer__trip");
-const aboutMeAnswerCountriesContainer = getElemId("aboutme__answer__countries");
+
+const aboutMeAnswerTrip = document.getElementById("aboutme__answer__trip");
+const aboutMeAnswerCountriesContainer = document.getElementById(
+  "aboutme__answer__countries"
+);
 const aboutMeAnswerCountries = document.querySelectorAll(
   ".aboutme__answer__country"
 );
-
 // クリックする
 aboutMeAnswerTrip.onclick = function () {
   // 両方にopenクラスをつける
@@ -36,10 +33,12 @@ aboutMeAnswerTrip.onclick = function () {
 };
 
 // galleryのスライドショー
-const galleryScreen = getElemId("gallery__slide");
-const galleryArrowRight = getElemId("gallery__slide__arrow-right");
-const galleryArrowLeft = getElemId("gallery__slide__arrow-left");
 
+const galleryScreen = document.getElementById("gallery__slide");
+const galleryArrowRight = document.getElementById(
+  "gallery__slide__arrow-right"
+);
+const galleryArrowLeft = document.getElementById("gallery__slide__arrow-left");
 // 写真の情報
 let slideImages = [
   "cambodia1.jpg",
@@ -50,10 +49,8 @@ let slideImages = [
   "thailand1.png",
   "vietnam1.jpg",
 ];
-
-// 初期値
+// 順番の初期値
 let i = 0;
-
 // 次の写真に変える関数
 const changeImage = function () {
   if (i === Number(slideImages.length) - 1) {
@@ -63,15 +60,12 @@ const changeImage = function () {
   }
   galleryScreen.src = `./images/${slideImages[i]}`;
 };
-
 // 自動でスライド
 setInterval(changeImage, 5000); // 写真を返る動作を5秒に1回する
-
 // 右を押したら次の写真
 galleryArrowRight.onclick = function () {
   changeImage();
 };
-
 // 左を押したら前の写真
 galleryArrowLeft.onclick = function () {
   if (i === 0) {
@@ -81,3 +75,35 @@ galleryArrowLeft.onclick = function () {
   }
   galleryScreen.src = `./images/${slideImages[i]}`;
 };
+
+// // スムーズにスクロール
+
+// const navLinks = document.querySelectorAll(".nav-link");
+// // 情報を得る関数
+// const getInfo = function (num) {
+//   const triggerHref = navLinks[num].getAttribute("href"); // link自身のhrefを保存
+//   const targetHref = document.getElementById(triggerHref.replace("#", "")); // linkの#を除いたidを持つ要素を保存 nodeの情報で位置が分かる
+
+//   const positionFromPageTopToBrawerTop = pageYOffset; // ページのトップからブラウザのトップまで
+//   const targetPositionFromBrawer = targetHref.getBoundingClientRect().top; // ブラウザのトップから目的地までの距離
+//   targetPositon =
+//     positionFromPageTopToBrawerTop + targetPositionFromBrawer - 64; // 合計 - headerの高さ
+
+//   return targetPositon; // 結果を返す
+// };
+// // クリックイベントを登録する関数
+// const clickLink = function (num) {
+//   navLinks[num].onclick = function (e) {
+//     e.preventDefault(); // 標準のスクロールを停止する
+//     getInfo(num); // targetPositionの取得
+//     // 組み込みメソッドscrollで位置, 動作指定する
+//     window.scroll({
+//       top: targetPositon,
+//       behavior: "smooth",
+//     });
+//   };
+// };
+// // linkがある個数分だけイベントを作る
+// for (let i = 0; i < navLinks.length; i++) {
+//   clickLink(i);
+// }
