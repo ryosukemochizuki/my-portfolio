@@ -131,6 +131,37 @@ galleryArrowLeft.onclick = function () {
   galleryScreen.src = `./images/${slideInfo[i].image}`;
 };
 
+// タブレット以下用メニュー
+
+const smallMenu = document.getElementById("small-menu");
+const headerNavListsContainer = document.getElementById(
+  "header__nav-container__lists"
+);
+const bar1 = document.getElementById("bar1");
+const bar2 = document.getElementById("bar2");
+const bar3 = document.getElementById("bar3");
+const navListsItems = document.querySelectorAll(
+  ".header__nav-container__lists-item"
+);
+
+smallMenu.onclick = function () {
+  headerNavListsContainer.classList.toggle("open");
+  bar1.classList.toggle("open");
+  bar2.classList.toggle("open");
+  bar3.classList.toggle("open");
+};
+
+for (let i = 0; i < navListsItems.length; i++) {
+  navListsItems[i].onclick = function () {
+    if (headerNavListsContainer.classList.contains("open")) {
+      headerNavListsContainer.classList.remove("open");
+      bar1.classList.remove("open");
+      bar2.classList.remove("open");
+      bar3.classList.remove("open");
+    }
+  };
+}
+
 // // スムーズにスクロール
 
 // const navLinks = document.querySelectorAll(".nav-link");
