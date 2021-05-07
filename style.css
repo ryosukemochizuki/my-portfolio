@@ -81,9 +81,7 @@ header {
     height: 1.5rem;
     width: 2rem;
     display: block;
-    flex-direction: column;
     position: relative;
-    box-sizing: border-box;
   }
 
   .bar {
@@ -124,9 +122,6 @@ header {
 }
 
 @media screen and (max-width: 500px) {
-  /* header {
-    width: 95%;
-  } */
   .header-container {
     width: 90%;
   }
