@@ -1,3 +1,15 @@
+// // titleの回転
+
+const homeDiscription = document.getElementById("home__discription");
+
+const addFadein = function () {
+  homeDiscription.classList.add("fadein");
+};
+window.onload = function () {
+  // 一度だけ処理を実行
+  setTimeout(addFadein, 2000);
+};
+
 // // aboutmeのフェードイン
 
 const aboutMeQuestions = document.querySelectorAll(".aboutme__question");
@@ -164,32 +176,32 @@ for (let i = 0; i < navListsItems.length; i++) {
 
 // // スムーズにスクロール
 
-// const navLinks = document.querySelectorAll(".nav-link");
-// // 情報を得る関数
-// const getInfo = function (num) {
-//   const triggerHref = navLinks[num].getAttribute("href"); // link自身のhrefを保存
-//   const targetHref = document.getElementById(triggerHref.replace("#", "")); // linkの#を除いたidを持つ要素を保存 nodeの情報で位置が分かる
+const navLinks = document.querySelectorAll(".nav-link");
+// 情報を得る関数
+const getInfo = function (num) {
+  const triggerHref = navLinks[num].getAttribute("href"); // link自身のhrefを保存
+  const targetHref = document.getElementById(triggerHref.replace("#", "")); // linkの#を除いたidを持つ要素を保存 nodeの情報で位置が分かる
 
-//   const positionFromPageTopToBrawerTop = pageYOffset; // ページのトップからブラウザのトップまで
-//   const targetPositionFromBrawer = targetHref.getBoundingClientRect().top; // ブラウザのトップから目的地までの距離
-//   targetPositon =
-//     positionFromPageTopToBrawerTop + targetPositionFromBrawer - 64; // 合計 - headerの高さ
+  const positionFromPageTopToBrawerTop = pageYOffset; // ページのトップからブラウザのトップまで
+  const targetPositionFromBrawer = targetHref.getBoundingClientRect().top; // ブラウザのトップから目的地までの距離
+  targetPositon =
+    positionFromPageTopToBrawerTop + targetPositionFromBrawer - 64; // 合計 - headerの高さ
 
-//   return targetPositon; // 結果を返す
-// };
-// // クリックイベントを登録する関数
-// const clickLink = function (num) {
-//   navLinks[num].onclick = function (e) {
-//     e.preventDefault(); // 標準のスクロールを停止する
-//     getInfo(num); // targetPositionの取得
-//     // 組み込みメソッドscrollで位置, 動作指定する
-//     window.scroll({
-//       top: targetPositon,
-//       behavior: "smooth",
-//     });
-//   };
-// };
-// // linkがある個数分だけイベントを作る
-// for (let i = 0; i < navLinks.length; i++) {
-//   clickLink(i);
-// }
+  return targetPositon; // 結果を返す
+};
+// クリックイベントを登録する関数
+const clickLink = function (num) {
+  navLinks[num].onclick = function (e) {
+    e.preventDefault(); // 標準のスクロールを停止する
+    const targetPosition = getInfo(num); // targetPositionの取得
+    // 組み込みメソッドscrollで位置, 動作指定する
+    window.scroll({
+      top: targetPositon,
+      behavior: "smooth",
+    });
+  };
+};
+// linkがある個数分だけイベントを作る
+for (let i = 0; i < navLinks.length; i++) {
+  clickLink(i);
+}

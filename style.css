@@ -1,7 +1,7 @@
 /* 設定 */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
+  /* scroll-behavior: smooth;
+  scroll-padding-top: 4rem; */
   letter-spacing: 0.5px;
   color: #222;
   font-weight: bold;
@@ -146,9 +146,17 @@ header {
   margin: 0 auto;
 }
 
-.home__discription {
+#home__discription {
+  opacity: 0;
   padding-top: 10rem;
   width: max-content;
+  transition: 3s;
+  transform: translateY(-4rem) rotateY(-180deg);
+}
+
+#home__discription.fadein {
+  opacity: 1;
+  transform: translateY(0) rotateY(0);
 }
 
 .home__discription__sub-title {
@@ -320,6 +328,7 @@ header {
 #gallery__slide {
   width: 40%;
   margin: 0 auto;
+  display: inline-block;
 }
 
 #gallery__slide__arrow-right {
