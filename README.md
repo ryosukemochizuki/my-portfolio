@@ -2,6 +2,12 @@
 
 My Portfolio Demo 👉 https://ryosukemochizuki.github.io/my-portfolio/
 
+制作期間：4 日
+
+使用スキル：HTML, CSS, javascript(ハンバーガーメニュー、スムーズスクロール、フェードイン、スライドショー), レスポンシブ対応
+
+デプロイ：githubPages
+
 (ここから上の行は、自分で編集してポートフォリオサイトの紹介にしてください。)
 
 # ポートフォリオ製作課題テンプレート
